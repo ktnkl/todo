@@ -1,0 +1,11 @@
+.top-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.left-side {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}

@@ -3,12 +3,12 @@ import { createSlice } from "@reduxjs/toolkit"
 const initialState = {
   processing: {
     sort: {
-      newFirst: false
+      newFirst: true
     },
     filter: {
       completed: {
-        all: false,
-        completed: true,
+        all: true,
+        completed: false,
         uncompleted: false,
       }
     }

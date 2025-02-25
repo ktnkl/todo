@@ -15,6 +15,8 @@ const Task = ({task}) => {
         <input 
           type="checkbox" 
           checked={task.completed}
+          className={classes.checkbox}
+          id={task.id}
           onChange={e => {
             dispatch(changeCompleteStatus({
               id: task.id, 
@@ -22,7 +24,7 @@ const Task = ({task}) => {
             }))
           }}
         />
-        <div>{task.title}</div>
+        <label htmlFor={task.id} className={classes.label}>{task.title}</label>
       </div>  
       <Button handleClick={() => dispatch(deleteTask({
         id: task.id

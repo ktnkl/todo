@@ -7,7 +7,7 @@
   height: 100vh;
 
   padding: 2rem;
-  padding-inline: 10rem;
+  padding-inline: 1rem;
 }
 
 
@@ -25,5 +25,12 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media (min-width: 768px) {
+  .App {
+    padding: 2rem;
+    padding-inline: 10rem;
   }
 }

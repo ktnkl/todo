@@ -20,7 +20,6 @@ export const useSort = (tasks, processing) => {
   } else {
     let sortedTasks = [...filteredTasks]
     sortedTasks.sort((a, b) => {
-      console.log(a.id - b.id)
       return b.id - a.id
     })
     return sortedTasks

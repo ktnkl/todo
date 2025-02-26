@@ -13,6 +13,7 @@ const Form = () => {
     <div className={cx(classes.form)}>
       <input 
         type="text"
+        placeholder="Здесь могла быть ваша задача"
         className={cx(classes.input)}
         value={taskTitle}
         onChange={e => setTaskTitle(e.target.value)} 
@@ -26,7 +27,10 @@ const Form = () => {
           }))
           setTaskTitle('')
         }}
-      >Добавить</Button>
+        type="primary"
+      >
+        Добавить
+      </Button>
     </div>
   );
 };

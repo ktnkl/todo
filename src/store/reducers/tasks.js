@@ -2,16 +2,7 @@ import { createSlice } from "@reduxjs/toolkit"
 
 const initialState = {
   tasks: [
-    {
-      id: 1,
-      title: 'do something',
-      completed: true
-    },
-    {
-      id: 2,
-      title: 'do something again',
-      completed: false
-    },
+    
   ],
   
 }

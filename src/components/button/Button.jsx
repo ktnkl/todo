@@ -1,11 +1,16 @@
 import React from 'react';
 import cx from 'classnames'
-import clases from './Button.module.css'
+import classes from './Button.module.css'
 
-const Button = ({children, handleClick}) => {
+const Button = ({children, handleClick, type, customClass}) => {
+  const buttonClasses = cx({
+    [classes.button]: true,
+    [classes[type]]: true,
+    [classes[customClass]]: true,
+  })
   return (
     <button 
-      className={cx(clases.button)}
+      className={buttonClasses}
       onClick={handleClick}
     >
       {children}

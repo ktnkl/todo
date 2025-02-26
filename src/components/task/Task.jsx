@@ -3,32 +3,36 @@ import { useDispatch } from 'react-redux';
 import { changeCompleteStatus, deleteTask } from '../../store/reducers/tasks';
 import Button from '../button/Button';
 import classes from './Task.module.css'
+import Checkbox from '../UI/checkbox/Checkbox';
 
 const Task = ({task}) => {
   const dispatch = useDispatch()
+  const changeHandler = (e) => {
+    dispatch(changeCompleteStatus({
+      id: task.id, 
+      completed: e.target.checked
+    }))
+  }
   return (
     <div 
       className={classes.task}
-      key={task.id}
     >
       <div className={classes.leftSide}>
-        <input 
-          type="checkbox" 
-          checked={task.completed}
-          className={classes.checkbox}
+        <Checkbox 
           id={task.id}
-          onChange={e => {
-            dispatch(changeCompleteStatus({
-              id: task.id, 
-              completed: e.target.checked
-            }))
-          }}
+          onChange={changeHandler}
+          checked={task.completed}
+          label={task.title}
         />
-        <label htmlFor={task.id} className={classes.label}>{task.title}</label>
       </div>  
-      <Button handleClick={() => dispatch(deleteTask({
-        id: task.id
-      }))}>удалить</Button>
+      <Button 
+        handleClick={() => dispatch(deleteTask({
+          id: task.id
+        }))}
+        type="danger"
+      >
+        удалить
+      </Button>
     </div>
   );
 };

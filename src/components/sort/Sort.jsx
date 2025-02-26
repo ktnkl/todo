@@ -2,11 +2,11 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectProcessing } from '../../store/reducers/processing';
 import { changeSort } from '../../store/reducers/processing';
-import Input from '../UI/input/Input';
+import Radio from '../UI/radio/Radio';
+import ProcessBlock from '../UI/process_block/ProcessBlock';
 
 const Sort = () => {
   const processing = useSelector(selectProcessing)
-  console.log(processing.sort.newFirst)
   const dispatch = useDispatch()
   const handleChange = (e) => {dispatch(changeSort({
     type: 'newFirst',
@@ -15,16 +15,15 @@ const Sort = () => {
     
   
   return (
-    <form>
-      <Input
+    <ProcessBlock title="По дате: ">
+      <Radio
         label="Сначала старые"
-        type="radio"
         id="old"
         name="datasort"
         onChange={handleChange}
         checked={!processing.sort.newFirst}
       />
-      <Input
+      <Radio
         label="Сначала новые"
         type="radio"
         id="new"
@@ -32,33 +31,8 @@ const Sort = () => {
         onChange={handleChange}
         checked={processing.sort.newFirst}
       />
-      {/* <span>По дате:</span>
-      <div>
-      <Radio
-          name="dataSort" 
-          id="old"
-          checked={!processing.sort.newFirst}
-          changeHandler={dispatch(changeSort({
-            type: 'newFirst',
-            value: false
-          }))}
-          label="Сначала старые"
-        />
-      </div>
-      <div>
-        <Radio
-          name="dataSort" 
-          id="new"
-          checked={processing.sort.newFirst}
-          changeHandler={dispatch(changeSort({
-            type: 'newFirst',
-            value: true
-          }))}
-          label="Сначала новые"
-        />
-        
-      </div> */}
-    </form>
+      
+    </ProcessBlock>
   );
 };
 

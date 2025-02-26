@@ -1,0 +1,21 @@
+.block {
+  border: 1px solid #0d6efd;
+  border-radius: 0 0 0 10px;
+  border-top: none;
+  border-right: none;
+  padding: 8px;
+  padding-top: 0;
+  width: fit-content;
+}
+
+.title {
+  text-align: left;
+  padding: 0 8px;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+  align-items: flex-start;
+}

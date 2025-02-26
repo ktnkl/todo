@@ -1,0 +1,26 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  background-color: #0d6efd;
+  color: #fff;
+  font-size: 2.4rem;
+  padding-inline: 2rem;
+  box-sizing: border-box;
+}
+
+.title {
+  font-weight: 700;
+  font-style: italic;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+}
+
+.right-side {
+
+}
+
+@media (min-width: 768px) {
+  .header {
+    padding-inline: 10rem;
+  }
+}

@@ -5,12 +5,13 @@
   flex-direction: column;
   justify-content: start;
   height: 100vh;
-
-  padding: 2rem;
-  padding-inline: 1rem;
+  hyphens: auto;
+  word-break: break-all;
 }
 
-
+.main-block {
+  padding-inline: 2rem;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -30,7 +31,9 @@
 
 @media (min-width: 768px) {
   .App {
-    padding: 2rem;
+  }
+
+  .main-block {
     padding-inline: 10rem;
   }
 }

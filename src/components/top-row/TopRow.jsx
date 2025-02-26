@@ -12,12 +12,14 @@ const TopRow = () => {
       <div className={cx(classes['left-side'])}>
         <Button
           handleClick={() => dispatch(setActive({object: 'sort'}))}
+          type="secondary"
         >
           Сортировка
         </Button>
 
         <Button
           handleClick={() => dispatch(setActive({object: 'filter'}))}
+          type="secondary"
         >
           Фильтрация
         </Button>
@@ -25,6 +27,7 @@ const TopRow = () => {
       <div >
         <Button
           handleClick={() => dispatch(setActive({object: 'add'}))}
+          type="secondary"
         >
           Добавить задачу
         </Button>

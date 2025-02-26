@@ -5,6 +5,7 @@
   right: 0;
   left: 0;
   background: rgba(0,0,0, 0.5);
+  
 }
 
 .modalContent {
@@ -12,6 +13,8 @@
   background: white;
   border-radius: 16px;
   min-width: 450px;
+  z-index: 3;
+  box-sizing: border-box;
 }
 
 .modal.active {
@@ -22,4 +25,10 @@
 
 .modal.inactive {
   display: none;
+}
+
+@media (max-width: 768px) {
+  .modalContent {
+    width: 95%;
+  }
 }

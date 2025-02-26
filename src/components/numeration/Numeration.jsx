@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import getPagesArray from '../../utils/numeration';
 import addThreeDots from '../../utils/addThreeDots';
 import { selectPage, setPage } from '../../store/reducers/page';
+import classes from './Numeration.module.css'
+import classNames from 'classnames';
 
 const Numeration = ({tasksCount}) => {
   let pagesAmount
@@ -15,19 +17,29 @@ const Numeration = ({tasksCount}) => {
   const dispatch = useDispatch()
   const currentPage = useSelector(selectPage)
   const pagesArrayWithDots = addThreeDots(pagesArray, currentPage)
+  const handleClick = (e) => {
+    const content = Number(e.target.innerHTML)
+    if (!content) {
+      return
+    } 
+    dispatch(setPage({newPage: content}))
+  }
   return (
-    <div>
+    <div className={classNames({
+      [classes.wrapper]: true,
+    })}>
       {
         tasksCount
         ?
         pagesArrayWithDots.map(p => 
           <span
-            style={{margin: '5px'}}
-            onClick={() => {
-              if (p !== '...') {
-                dispatch(setPage({newPage: p}))
-              }
-            }}
+            key={p}
+            className={classNames({
+              [classes.item]: true,
+              [classes["item_active"]]: p === currentPage ? true : false,
+              [classes["item_dots"]]: p === "..." ? true : false,
+            })}
+            onClick={e => handleClick(e)}
           >
             {p}
           </span>

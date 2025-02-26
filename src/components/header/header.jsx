@@ -1,11 +1,13 @@
 import React from 'react';
+import classes from './Header.module.css'
 
-const header = () => {
+const Header = () => {
   return (
-    <div>
-      jeader
+    <div className={classes.header}>
+      <p className={classes.title}>ToDo App</p>
+      <div className={classes["right-side"]}></div>
     </div>
   );
 };
 
-export default header;
+export default Header;

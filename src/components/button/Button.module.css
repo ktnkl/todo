@@ -7,7 +7,7 @@
   align-items: center;
   border-radius: 5px;
   border: 1px solid grey;
-
+  word-break: initial;
   font-size: 1.6rem;
   cursor: pointer;
   -webkit-user-select: none;
